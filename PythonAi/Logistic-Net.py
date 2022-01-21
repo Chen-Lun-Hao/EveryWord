@@ -20,9 +20,9 @@ def load_dataset():
 
 train_set_x_orig , train_set_y , test_set_x_orig , test_set_y , classes = load_dataset()
 
-m_train = train_set_y.shape[1] #训练集里图片的数量。
-m_test = test_set_y.shape[1] #测试集里图片的数量。
-num_px = train_set_x_orig.shape[1] #训练、测试集里面的图片的宽度和高度（均为64x64）。
+m_train = train_set_y.shape[1] #训练集里图片的数量。纬度
+m_test = test_set_y.shape[1] #测试集里图片的数量。纬度
+num_px = train_set_x_orig.shape[1] #训练、测试集里面的图片的宽度和高度（均为64x64）。纬度
 
 #现在看一看我们加载的东西的具体情况
 print ("训练集的数量: m_train = " + str(m_train))
