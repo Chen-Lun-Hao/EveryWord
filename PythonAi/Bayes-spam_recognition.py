@@ -112,18 +112,21 @@ class NaiveBates:
 
 if __name__ == '__main__':
     #loadding DataSet
-    data, classTag = getDateSet()
+    data, classTag = getDateSet("D:\\Python_resources\\13-rubbish-messages\\SMSSpamCollection")
     #setting training set
     train_size = 3000
     #training set
     train_x, trian_y = data[:train_size], classTag[:train_size]
     #testing set
-    test_x, test_y = data[train_size:], classTag[train_size:]
+    test_x = data[train_size:]
+    test_y = classTag[train_size:]
     #traininng the model on the training set 
     nb_model =  NaiveBates()
     nb_model.fit(train_x, trian_y)
     #get the forecast outcome on the testing set
     pre_y = nb_model.predict(test_x)
+    #print(pre_y)
+    #print(test_y)
 
     #model evaluation
     accuracy_score_value = accuracy_score(test_y, pre_y)

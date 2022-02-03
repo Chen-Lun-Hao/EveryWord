@@ -122,7 +122,9 @@ def train(netG, netD, dataloader):
             output = netD(imgs)
             label.data.fill_(real_label)
             label = label.to(device)
-            errD_real = criterion(output, label)
+            print(label)
+            errD_real = criterion(output, label)#报错,label的类型错误
+            #errD_real = errD_real.squeeze(-1)
             errD_real.backward()
             #
             label.data.fill_(fake_label)
