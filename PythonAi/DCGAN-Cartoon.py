@@ -35,7 +35,7 @@ class Generator(nn.Module):
         )
         #The input of layer4 is a image 128*32*32, and the output size is 3*96*96
         self.layer5 = nn.Sequential(
-            nn.ConvTranspose2d(158, 3, 5, 3, 1, bias=False),
+            nn.ConvTranspose2d(128, 3, 5, 3, 1, bias=False),
             nn.Tanh()
         )
 
@@ -122,9 +122,9 @@ def train(netG, netD, dataloader):
             output = netD(imgs)
             label.data.fill_(real_label)
             label = label.to(device)
-            print(label)
-            errD_real = criterion(output, label)#报错,label的类型错误
-            #errD_real = errD_real.squeeze(-1)
+            #print(output)
+            #print(label)
+            errD_real = criterion(output.squeeze(-1).squeeze(-1).squeeze(-1), label)#报错,需要压缩output，使用squeeze函数,或者使用unsqueeze升维
             errD_real.backward()
             #
             label.data.fill_(fake_label)
@@ -133,7 +133,7 @@ def train(netG, netD, dataloader):
             fake = netG(noise)
             #
             output = netD(fake.detach())
-            errD_fake = criterion(output, label)
+            errD_fake = criterion(output.squeeze(-1).squeeze(-1).squeeze(-1), label)
             errD_fake.backward()
             errD = errD_fake+errD_real
             optimizerD.step()
@@ -144,7 +144,7 @@ def train(netG, netD, dataloader):
             label.data.fill_(real_label)
             label = label.to(device)
             output = netD(fake)
-            errG = criterion(output, label)
+            errG = criterion(output.squeeze(-1).squeeze(-1).squeeze(-1), label)
             errG.backward()
             optimizerG.step()
             if i % 50 == 0:
@@ -158,7 +158,7 @@ def train(netG, netD, dataloader):
 if __name__ == "__main__":
     #
     transforms = torchvision.transforms.Compose([
-        torchvision.transforms.Scale(ImageSize),
+        torchvision.transforms.Resize(ImageSize),
         torchvision.transforms.ToTensor(),
         torchvision.transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))]
     )
