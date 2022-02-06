@@ -63,3 +63,4 @@ def initialize_parameters(n_x, n_h, n_y):
     b1 = np.zeros(shape=(n_h, 1))
     w2 = np.random.randn(n_y, n_h) * 0.01
     b2 = np.zeros(shape=(n_y, 1))
+    
