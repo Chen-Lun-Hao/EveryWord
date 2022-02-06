@@ -99,8 +99,8 @@ ImageSize = 96
 Epoch = 25
 Lr = 0.0002
 Betal = 0.5
-DataPath = "D:\\Python_resources\\17-Generating-anime-characters\\" #the location of the data set
-OutPath = "D:\\Python_resources\\17-Generating-anime-characters\\imgs\\" #the result of the calculation set
+DataPath = "D:\\Python_resources\\17-Generating-anime-characters\\"#faces\\" #the location of the data set
+OutPath = "D:\\Python_resources\\17-Generating-anime-characters-output-imgs\\" #the result of the calculation set
 
 #Defines whether to use a GPU
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
