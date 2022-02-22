@@ -1,0 +1,51 @@
+<!-- 文档类型标记 -->
+<!DOCTYPE html>
+<!--大作业开始界面，动态-->
+
+<html>
+<head>
+    <meta charset ="utf-8">
+    <title>菜鸟教程</title>
+    <!-- css -->
+    <style type="text/css">
+        .anim{
+            width:300xx;
+            height:300px;
+            margin-left:150px;
+            margin-top: 50px;
+            background: url(D:/Photo/LockScreen/221609-157616016916f7.jpg) no-repeat;
+            background-size: cover;
+        }
+        .anim:hover{
+            animation: rot_test 3s infinite linear;
+        }
+        @keyframes rot_test{
+            0%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="anim"></div>
+    <h1>我的第一个标题</h1>
+    <a href="https://www.runoob.com">这是一个链接</a>
+    <p>我的第一个段落</p>
+    <h4>默认对齐的图像 (align="bottom"):</h4>
+    <p>这是一些文本。 <img src="smiley.gif" alt="Smiley face" width="32" height="32"> 这是一些文本。</p>
+
+    <h4>图片使用 align="middle":</h4>
+    <p>这是一些文本。 <img src="smiley.gif" alt="Smiley face" align="middle" width="32" height="32">这是一些文本。</p>
+
+    <h4>图片使用 align="top":</h4>
+    <p>这是一些文本。 <img src="smiley.gif" alt="Smiley face" align="top" width="32" height="32">这是一些文本。</p>
+
+    <p><b>注意:</b>在HTML 4中 align 属性已废弃，HTML5 已不支持该属性，可以使用 CSS 代替。</p>
+
+
+</body>
+</html>
+
