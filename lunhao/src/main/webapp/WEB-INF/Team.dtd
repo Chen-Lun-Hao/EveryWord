@@ -1,0 +1,12 @@
+<!-- 足球队一支，队名为Madrid，球员5人：Ronaldo,Casillas,Ramos,Modric,Benzema; -->
+<!-- 篮球队一支，队名为Lakers,队员2人：Oneal,Bryant -->
+<!-- 自定义xml标签，并定义标签的属性，如球队成员的成员数
+                并定义标签中的子标签
+-->
+<!ELEMENT 球队列表 (球队+)>
+<!ELEMENT 球队 (球队类型,球队名称,球队成员)>
+<!ELEMENT 球队类型 (#PCDATA)>
+<!ELEMENT 球队名称 (#PCDATA)>
+<!ELEMENT 球队成员 (姓名+)>
+<!ATTLIST 球队成员 成员数 CDATA #REQUIRED>
+<!ELEMENT 姓名 (#PCDATA)>

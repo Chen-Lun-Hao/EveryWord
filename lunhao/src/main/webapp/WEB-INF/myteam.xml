@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 足球队一支，队名为Madrid，球员5人：Ronaldo,Casillas,Ramos,Modric,Benzema; -->
+<!-- 篮球队一支，队名为Lakers,队员2人：Oneal,Bryant -->
+<!-- Teams是根元素，Team是为单只队伍,队名作为其属性id，
+    此处将其队伍类型Type，队伍成员Players作为子标签 ，其中队伍成员具有属性count，表示成员多少,
+    PlayerName是其成员名字
+-->
+<!DOCTYPE Teams [
+    <!ELEMENT Teams (Team+)>
+    <!ELEMENT Team (Type,Players)>
+    <!ATTLIST Team name ID #REQUIRED>
+    <!ELEMENT Type (#PCDATA)>
+    <!ELEMENT Players (PlayerName+)>
+    <!ELEMENT PlayerName (#PCDATA)>
+    <!ATTLIST Players count CDATA #REQUIRED>
+]>
+<Teams>
+    <Team name="Madrid">
+        <Type>football</Type>
+        <Players count="5">
+            <PlayerName>Ronaldo</PlayerName>
+            <PlayerName>Casillas</PlayerName>
+            <PlayerName>Ramos</PlayerName>
+            <PlayerName>Modric</PlayerName>
+            <PlayerName>Benzema</PlayerName>
+        </Players>
+    </Team>
+    <Team name="Lakers">
+        <Type>basketball</Type>
+        <Players count="2">
+            <PlayerName>Oneal</PlayerName>
+            <PlayerName>Bryant</PlayerName>
+        </Players>
+    </Team>
+</Teams>

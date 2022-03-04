@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 足球队一支，队名为Madrid，球员5人：Ronaldo,Casillas,Ramos,Modric,Benzema; -->
+<!-- 篮球队一支，队名为Lakers,队员2人：Oneal,Bryant -->
+<!-- 在xml文件中引入定义的dtd文件，按照约束编写xml文档 -->
+<!DOCTYPE 球队列表 SYSTEM "Team.dtd">
+<球队列表>
+    <球队>
+        <球队类型>"Football"</球队类型>
+        <球队名称>"Madrid"</球队名称>
+        <球队成员 成员数="5">
+            <姓名>Ronaldo</姓名>
+            <姓名>Casillas</姓名>
+            <姓名>Ramos</姓名>
+            <姓名>Modric</姓名>
+            <姓名>Benzema</姓名>
+        </球队成员>
+    </球队>
+    <球队>
+        <球队类型>"Basketball"</球队类型>
+        <球队名称>"Lakers"</球队名称>
+        <球队成员 成员数="2">
+            <姓名>Oneal</姓名>
+            <姓名>Bryant</姓名>
+        </球队成员>
+    </球队>
+</球队列表>
