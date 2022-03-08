@@ -1,0 +1,113 @@
+body {
+    background: #eee;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+li {
+    list-style: none;
+}
+
+.box {
+    margin-top: 50px;
+    position: relative;
+    padding: 0px 130px 0px 40px;
+}
+
+.c-menu {
+    height: 50px;
+    overflow: hidden;
+    width: 100%;
+    margin-right: 60px;
+}
+
+.list-group {
+    margin-bottom: 0px;
+}
+
+.btn {
+    display: inline-block;
+    float: right
+}
+
+.c-item {
+    border-radius: 0px !important;
+    float: left;
+    display: inline-block;
+}
+
+.c-item a {
+    float: left;
+    padding: 16px 30px;
+    color: #fff;
+    background: #18191a;
+    display: inline-block;
+}
+
+.c-item a:hover {
+    background: #f01400;
+}
+
+.c-item .icon {
+    margin-top: 4px;
+    margin-left: 3px;
+    float: right;
+}
+
+.btn-group {
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    width: 116px;
+}
+
+.btn {
+    background: #18191a;
+    color: #fff;
+    margin-left: 1px;
+    outline: none;
+    padding: 8px 12px;
+    border: 1px solid #18191a;
+}
+
+.btn:hover,
+.btn:focus {
+    background: #18191a;
+    color: #fff;
+    outline: none;
+}
+
+#left {
+    float: left;
+}
+
+#right {
+    float: right;
+    display: none;
+}
+
+.dropdown {
+    background: #18191a;
+    position: absolute;
+    top: 50px;
+    display: none;
+    width: 135px;
+}
+
+.dropdown li {
+    padding: 10px;
+    color: #fff;
+}
+
+.dropdown li:hover {
+    background: #f01400;
+    padding: 10px;
+    color: #fff;
+}
