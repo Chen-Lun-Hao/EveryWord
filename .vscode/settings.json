@@ -3,5 +3,9 @@
     "editor.tabSize": 4,
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
-    "java.configuration.updateBuildConfiguration": "automatic"
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "d:\\Tomcat\\apache-tomcat-8.5.76\\lib\\servlet-api.jar"
+    ]
 }
