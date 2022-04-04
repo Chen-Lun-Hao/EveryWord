@@ -3,8 +3,14 @@
     "editor.tabSize": 4,
     "editor.formatOnSave": true,
     "editor.formatOnPaste": true,
-    "java.project.referencedLibraries": [
-        "lib/**/*.jar",
-        "d:\\OrherJAR\\mysql-connector-java-8.0.28.jar"
-    ]
+    "java.project.referencedLibraries": {
+        "include": [
+            "lib/**/*.jar",
+            "d:\\OrherJAR\\mysql-connector-java-8.0.28.jar"
+        ],
+        "exclude": [
+            "d:\\lunhao\\lib\\servlet-api.jar"
+        ]
+    },
+    "java.configuration.updateBuildConfiguration": "interactive"
 }
