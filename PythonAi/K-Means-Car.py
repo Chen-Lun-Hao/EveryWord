@@ -6,13 +6,16 @@ import matplotlib.pyplot as plt
 from sklearn import preprocessing
 import matplotlib.cm as cm
 
+# 12章
+
 
 def getFeatrue(df):
     feature = []
     feature.append(len(df))  # 片段长度
     feature.append(np.sum(df['GPS车速']))  # 行驶距离
     feature.append(np.sum(df['GPS车速']) / len(df))  # 平均速度
-    speed_ave = 0.0; speed_ave_time = 0  # 平均行驶速度
+    speed_ave = 0.0
+    speed_ave_time = 0  # 平均行驶速度
     feature.append(np.max(df['加速度']))  # 最大加速度
     feature.append(np.min(df['加速度']))  # 最大减速度
     zero_time = 0  # 怠速时间占比
@@ -60,7 +63,7 @@ def getFeatrue(df):
 def cutPart(file_path='D:\\Python_resources\\12-Kinematics-of-Car-Driving/roadfile.xlsx'):
     df = pd.read_excel(file_path, sheet_name="原始数据1")
     df = df.drop(['时间', 'X轴加速度', 'Y轴加速度', 'Z轴加速度', '经度', '纬度', '扭矩百分比', '瞬时油耗', '油门踏板开度',
-             '空燃比', '发动机负荷百分比', '进气流量'], axis=1)
+                  '空燃比', '发动机负荷百分比', '进气流量'], axis=1)
     # 计算加速度
     df['加速度'] = df.diff()['GPS车速']
     df.iloc[0]['加速度'] = 0.0
@@ -85,7 +88,8 @@ def getSSE(input):
     # 存储不同簇数的SSE值
     distortions = []
     for i in range(1, 11):
-        km = KMeans(n_clusters=i, init="k-means++", n_init=10, max_iter=300, tol=1e-4, random_state=0)
+        km = KMeans(n_clusters=i, init="k-means++", n_init=10,
+                    max_iter=300, tol=1e-4, random_state=0)
         km.fit(input)
         distortions.append(km.inertia_)
     # 绘制结果
@@ -96,7 +100,8 @@ def getSSE(input):
 
 
 def getSilehotte(input, n_cluster):
-    km = KMeans(n_clusters=n_cluster, init="k-means++", n_init=10, max_iter=300, tol=1e-4, random_state=0)
+    km = KMeans(n_clusters=n_cluster, init="k-means++",
+                n_init=10, max_iter=300, tol=1e-4, random_state=0)
     y_km = km.fit_predict(input, n_cluster)
     # 获取簇的标号
     cluster_labels = np.unique(y_km)
@@ -109,7 +114,8 @@ def getSilehotte(input, n_cluster):
         c_silhouette_vals.sort()
         y_ax_upper += len(c_silhouette_vals)
         color = cm.jet(i / n_cluster)
-        plt.barh(range(y_ax_lower, y_ax_upper), c_silhouette_vals, height=1.0, edgecolor="none", color=color)
+        plt.barh(range(y_ax_lower, y_ax_upper), c_silhouette_vals,
+                 height=1.0, edgecolor="none", color=color)
         y_ticks.append((y_ax_lower + y_ax_upper) / 2)
         y_ax_lower += len(c_silhouette_vals)
 

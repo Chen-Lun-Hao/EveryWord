@@ -7,5 +7,9 @@
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
         "d:\\Tomcat\\apache-tomcat-8.5.76\\lib\\servlet-api.jar"
+    ],
+    "java.project.sourcePaths": [
+        "myBookManager/src",
+        "Jcq/src/pacakage01"
     ]
 }
